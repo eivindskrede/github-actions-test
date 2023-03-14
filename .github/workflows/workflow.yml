@@ -67,4 +67,4 @@ jobs:
         run: ls -R
 
       - name: kjør program
-        run: dotnet run ./program/TestGithubActions.dll
+        run: dotnet ./program/TestGithubActions.dll
