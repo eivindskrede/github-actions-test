@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = TheUnitTests
+build_property.ProjectDir = /Users/eivindskrede/projects/faggruppe/github-actions-2023-03-14/TestGithubActions/TheUnitTests/
