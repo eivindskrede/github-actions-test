@@ -63,8 +63,15 @@ jobs:
           name: my-application
           path: ./program
 
-      - name: list files
-        run: ls -R
+      - name: print funfact
+        run: echo ${{vars.funfact}}
+
+      - name: print secret
+        run: echo ${{secrets.MY_SECRET}}
 
       - name: kjør program
+        env:
+          env_secret: ${{secrets.MY_SECRET}}
         run: dotnet ./program/TestGithubActions.dll
+
+      - name:
