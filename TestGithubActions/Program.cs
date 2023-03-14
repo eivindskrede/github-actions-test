@@ -6,7 +6,7 @@ namespace TestGithubActions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Don't tell anybody, but {Environment.GetEnvironemntVariable("env_secret")}");
         }
     }
 }
