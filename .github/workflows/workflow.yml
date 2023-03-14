@@ -15,17 +15,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  run-workflow:
+  build-test-and-upload:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: checkout
-        uses: actions/checkout@v3
-
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v3.0.3
         with:
@@ -36,3 +31,12 @@ jobs:
 
       - name: test
         run: dotnet test
+
+      - name: list files
+        run: ls -R
+
+      - name: upload
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: my-application
+          path: ./TestGithubActions/bin/Debug/netcoreapp3.1/
